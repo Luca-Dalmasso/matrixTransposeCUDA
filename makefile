@@ -3,7 +3,7 @@
 #Last modification: 01/05/2022 by Luca
 
 #Application name (main.cu file by default)
-NAME=main
+NAME=matrixTranspose
 #Source path (.cu)
 SRC=src/
 #Headers path (.h)

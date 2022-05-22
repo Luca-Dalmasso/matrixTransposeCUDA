@@ -20,9 +20,9 @@
 /*size Y of shared memory tile*/
 #define BDIMY 16
 /* shared memory padding size (1= used for 4byte banks, 2=used when shared memory has 8byte banks)*/
-#define IPAD 1
+#define IPAD 2
 /*enable host computations for error checking*/
-#define CHECK 1
+#define CHECK 0
 
 /** @} */
 
@@ -258,7 +258,6 @@ __global__ void transposeSmemPad(float *in, float *out, unsigned int nx, unsigne
  */
 __global__ void transposeSmemUnrollPadDyn (float *in, float *out, unsigned int nx, unsigned int ny)
 {
-    // dynamic shared memory
     extern __shared__ float tile[];
 
     unsigned int ix = blockDim.x * blockIdx.x * 2 + threadIdx.x;
@@ -279,8 +278,9 @@ __global__ void transposeSmemUnrollPadDyn (float *in, float *out, unsigned int n
     if (ix + blockDim.x < nx && iy < ny)
     {
         // load data from global memory to shared memory
-        unsigned int row_idx = threadIdx.y * (blockDim.x * 2 + IPAD)+threadIdx.x;
-        tile[row_idx] = in[ti];
+        unsigned int row_idx = threadIdx.y * (blockDim.x * 2 + IPAD) +
+            threadIdx.x;
+        tile[row_idx]       = in[ti];
         tile[row_idx + BDIMX] = in[ti + BDIMX];
 
         // thread synchronization
@@ -307,8 +307,8 @@ int main(int argc, char **argv){
 	#endif
 	
 	int iKernel;
-	unsigned int nx=1<<11;
-	unsigned int ny=1<<11;
+	unsigned int nx=1<<12;
+	unsigned int ny=1<<12;
 	unsigned int blockx=16;
 	unsigned int blocky=16;
 	unsigned int i;
@@ -471,7 +471,7 @@ int main(int argc, char **argv){
     }else if(iKernel==9){
     	//run kernel with dynamic shared memory
     	iStart = cpuSecond();
-    	kernel<<<grid,block,(BDIMX + IPAD) * BDIMY * sizeof(float)>>>(dSource,dDest,nx,ny);
+    	kernel<<<grid,block,(BDIMX *2 + IPAD) * BDIMY * sizeof(float)>>>(dSource,dDest,nx,ny);
     	CHECK_CUDA(cudaGetLastError());
 		CHECK_CUDA(cudaDeviceSynchronize());
    	 	iElaps = cpuSecond() - iStart;
@@ -505,8 +505,8 @@ int main(int argc, char **argv){
     }
     #endif
 
-    // calculate effective_bandwidth (GB/s)
-    effBW=(2 * nx * ny * sizeof(float)) / ((1e+9f)*iElaps);
+    // calculate effective_bandwidth (MB/s)
+    effBW=(2 * nx * ny * sizeof(float)) / ((1e+6f)*iElaps);
     /*printf on stdout used for profiling <kernelName>,<elapsedTime>,<bandwidth>,<grid(x,y)>,<block(x,y)>*/
     fprintf(stdout,"%s,%f,%f,grid(%d.%d),block(%d.%d)\n",kernelName, effBW, iElaps, grid.x, grid.y, block.x, block.y);
 

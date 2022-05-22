@@ -1,6 +1,6 @@
 
 #Author: Dalmasso Luca
-#Last modification: 01/05/2022 by Luca
+#Last modification: 16/05/2022 by Luca
 
 #Application name (main.cu file by default)
 NAME=matrixTranspose
@@ -18,8 +18,8 @@ NVCC=/usr/local/cuda/bin/nvcc
 
 #COMPILE FLAGS
 CUDA_FLAGS=
-#change DEBUG flag to 0 to disable debug simbols (RELEASE)
-DEBUG=1
+#change DEBUG flag to 0 to disable debug simbols (DO NOT ENABLE DEBUG SIMBOLS WHEN PROFILING)
+DEBUG=0
 
 ifeq ($(DEBUG),1)
 	CUDA_FLAGS+=-g

@@ -9,16 +9,14 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
-template <typename T>
-__global__ void copyRow (T *src, T* dest, unsigned int nx, unsigned int ny){
+__global__ void copyRow (float *src, float* dest, unsigned int nx, unsigned int ny){
 	unsigned int ix=blockDim.x * blockIdx.x + threadIdx.x;
 	unsigned int iy=blockDim.y * blockIdx.y + threadIdx.y;
 	if (ix>=nx || iy>=ny) return;
 	dest[iy*nx + ix]=src[iy*nx + ix];
 }
 
-template <typename T>
-__global__ void copyCol (T *src, T* dest, unsigned int nx, unsigned int ny){
+__global__ void copyCol (float* src, float* dest, unsigned int nx, unsigned int ny){
 	unsigned int ix=blockDim.x * blockIdx.x + threadIdx.x;
 	unsigned int iy=blockDim.y * blockIdx.y + threadIdx.y;
 	if (ix>=nx || iy>=ny) return;
@@ -29,10 +27,6 @@ double cpuSecond(void) {
 	struct timeval tp;
 	gettimeofday(&tp,NULL);
 	return ((double)tp.tv_sec + (double)tp.tv_usec*1.e-6);
-}
-
-void getDeviceInfo(void){
-
 }
 
 void deviceInfor(void){
@@ -112,65 +106,13 @@ uint_8 randomUint8(void){
 	return rand()%0xff;
 }
 
-
-void testBenchmarks (unsigned int bx, unsigned int by){
-	double tFast, tSlow;
-	double bandwidth; 
-	unsigned int sizeX=(1<<20);
-	/*General CUDA Kernel 2D configuration: BLOCK*/
-	dim3 block (bx, by);
-	/*General CUDA Kernel 2D configuration: GRID*/
-	dim3 grid ((sizeX-1+block.x)/block.x,(sizeX-1+block.y)/block.y);
-	fprintf(stdout,"Benchmark kernel configurations: Grid(%d,%d), Block(%d,%d), size %d\n",grid.x,grid.y,block.x,block.y,sizeX*sizeX);
+uint_8 checkRes(float *host, float *device, unsigned int nx, unsigned int ny){
 	unsigned int i;
-	//************************
-	//********FLOAT***********
-	//************************
-	float *hSource;
-	float *dSource, *dDest;
-	float *gpuRes;
-	
-	hSource=(float *)malloc(sizeX*sizeof(float));
-	CHECK_PTR(hSource);
-	gpuRes=(float *)malloc(sizeX*sizeof(float));
-	CHECK_PTR(gpuRes);
-	CHECK_CUDA(cudaMalloc( (void**)&dSource, sizeX*sizeof(float)));	
-	CHECK_CUDA(cudaMalloc( (void**)&dDest, sizeX*sizeof(float)));
-	for(i=0;i<sizeX;i++)
-		hSource[i]=randomUint8()/(float)(1.0);
-	CHECK_CUDA(cudaMemcpy(dSource, hSource, sizeX*sizeof(float), cudaMemcpyHostToDevice));
-	tFast=cpuSecond();
-	copyRow<float><<<grid,block>>>(dSource, dDest, sizeX, sizeX);
-	CHECK_CUDA(cudaGetLastError());
-	cudaDeviceSynchronize();
-	tFast=cpuSecond()-tFast;
-	CHECK_CUDA(cudaMemcpy(gpuRes, dDest, sizeX*sizeof(float), cudaMemcpyDeviceToHost));
-	for(i=0;i<sizeX;i++){
-		if(hSource!=gpuRes){
-			fprintf(stderr,"GPU bad result!\n");
-			exit(1);
-		}
-	}
-	//test float strided
-	tSlow=cpuSecond();
-	copyCol<float><<<grid,block>>>(dSource, dDest, sizeX, sizeX);
-	CHECK_CUDA(cudaGetLastError());
-	cudaDeviceSynchronize();
-	tSlow=cpuSecond()-tSlow;
-	//result
-	bandwidth=(sizeX*sizeof(float)*2)/(tFast*(1e+9f));
-	fprintf(stdout,"Floating point single precision upper bandwidth: %fGB/s\n",bandwidth);
-	bandwidth=(sizeX*sizeof(float)*2)/(tSlow*(1e+9f));
-	fprintf(stdout,"Floating point single precision lower bandwidth: %fGB/s\n",bandwidth);
-	
-	free(hSource);
-	free(gpuRes);
-	CHECK_CUDA(cudaFree(dSource));
-	CHECK_CUDA(cudaFree(dDest));
-	
-	
+	for(i=0;i<(nx*ny);i++)
+		if(host[i]!=device[i])
+			return 1;
+	return 0;
 }
-
 
 
 

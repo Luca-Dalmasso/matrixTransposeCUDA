@@ -384,25 +384,25 @@ In my case i found that **the best best configuration for the transposeSmemUnrol
 
 This is the result of grid level optimization performed on two kernels (this printed information comes from the profiler script)<br>
 
-**Results..**
-Kernel Name          | Elapsed time (s)     | bandwidth (MB/s)     |           Block(x,y) |
-transposeUnroll4Col  | 0.008199             | 1023.128677          | block(16.16)        |
-**transposeUnroll4Col  | 0.008161             | 1027.881159          | block(32.8)         |**
-transposeUnroll4Col  | 0.019864             | 422.300304           | block(8.1)          |
-transposeUnroll4Col  | 0.018724             | 448.014517           | block(256.1)        |
-transposeUnroll4Col  | 0.017906             | 468.481580           | block(256.2)        |
-transposeUnroll4Col  | 0.016227             | 516.953499           | block(64.2)         |
-transposeUnroll4Col  | 0.016113             | 520.609800           | block(128.2)        |
-transposeUnroll4Col  | 0.015096             | 555.686026           | block(128.1)        |
-transposeUnroll4Col  | 0.013450             | 623.681570           | block(8.8)          |
-transposeUnroll4Col  | 0.012165             | 689.565148           | block(8.2)          |
-transposeUnroll4Col  | 0.011997             | 699.226377           | block(8.16)         |
-transposeUnroll4Col  | 0.010500             | 798.918531           | block(32.16)        |
-transposeUnroll4Col  | 0.010429             | 804.361302           | block(8.32)         |
-transposeUnroll4Col  | 0.010346             | 810.811912           | block(16.8)         |
-transposeUnroll4Col  | 0.010341             | 811.204484           | block(32.4)         |
-transposeUnroll4Col  | 0.009671             | 867.400638           | block(32.32)        |
-Goodbye..<br>
+	Results..
+	Kernel Name          | Elapsed time (s)     | bandwidth (MB/s)     |           Block(x,y) |
+	transposeUnroll4Col  | 0.008199             | 1023.128677          | block(16.16)        |
+	transposeUnroll4Col  | 0.008161             | 1027.881159          | block(32.8)         |
+	transposeUnroll4Col  | 0.019864             | 422.300304           | block(8.1)          |
+	transposeUnroll4Col  | 0.018724             | 448.014517           | block(256.1)        |
+	transposeUnroll4Col  | 0.017906             | 468.481580           | block(256.2)        |
+	transposeUnroll4Col  | 0.016227             | 516.953499           | block(64.2)         |
+	transposeUnroll4Col  | 0.016113             | 520.609800           | block(128.2)        |
+	transposeUnroll4Col  | 0.015096             | 555.686026           | block(128.1)        |
+	transposeUnroll4Col  | 0.013450             | 623.681570           | block(8.8)          |
+	transposeUnroll4Col  | 0.012165             | 689.565148           | block(8.2)          |
+	transposeUnroll4Col  | 0.011997             | 699.226377           | block(8.16)         |
+	transposeUnroll4Col  | 0.010500             | 798.918531           | block(32.16)        |
+	transposeUnroll4Col  | 0.010429             | 804.361302           | block(8.32)         |
+	transposeUnroll4Col  | 0.010346             | 810.811912           | block(16.8)         |
+	transposeUnroll4Col  | 0.010341             | 811.204484           | block(32.4)         |
+	transposeUnroll4Col  | 0.009671             | 867.400638           | block(32.32)        |
+	Goodbye..
 
 **Highlghted is the best result for a 1024x1024 matrix** <br>
 **As you can see the grid-level optimization has a very big impact on the performances due to the device_occupancy**<br>
@@ -436,126 +436,126 @@ from the main directory you can move to [script](./profiler_scripts/) directory 
 	
 This is an example of what you can do with this simple profiler script, all the results can be also found in the **report** directory.<br>
 
-**matrixTransposeCUDA/profiler_scripts$ ./profiler.sh** 
-Running 0..
-Running 1..
-Running 2..
-Running 3..
-Running 4..
-Running 5..
-Running 6..
-Running 7..
-Running 8..
-Running 9..
-Running 10..
-Kernel Name          | Elapsed time (s)     | bandwidth (MB/s)     |
-copyRow              | 0.007968             | 1052.793899          |
-copyCol              | 0.033173             | 252.873924           |
-transposeNaiveRow    | 0.032308             | 259.646017           |
-transposeNaiveCol    | 0.010387             | 807.610799           |
-transposeUnroll4Row  | 0.030671             | 273.503977           |
-transposeUnroll4Col  | 0.010322             | 812.703488           |
-transposeDiagonalRow | 0.033044             | 253.860993           |
-transposeDiagonalCol | 0.008201             | 1022.860983          |
-transposeSmem        | 0.013044             | 643.106783           |
-transposeSmemPad     | 0.012761             | 657.369207           |
-Profiling 0..
-Profiling 1..
-Profiling 2..
-Profiling 3..
-Profiling 4..
-Profiling 5..
-Profiling 6..
-Profiling 7..
-Profiling 8..
-Profiling 9..
-Select the kernel
-1) copyRow		   5) transposeUnroll4Row    9) transposeSmem
-2) copyCol		   6) transposeUnroll4Col   10) transposeSmemPad
-3) transposeNaiveRow	   7) transposeDiagonalRow  11) Quit
-4) transposeNaiveCol	   8) transposeDiagonalCol
-#? 8
-Peforming **grid-level optimization on transposeDiagonalCol Kernel**
-<7> Block: (8 1)..
-<7> Block: (8 2)..
-<7> Block: (8 8)..
-<7> Block: (8 16)..
-<7> Block: (8 32)..
-<7> Block: (16 8)..
-<7> Block: (16 16)..
-<7> Block: (32 4)..
-<7> Block: (32 8)..
-<7> Block: (32 16)..
-<7> Block: (32 32)..
-<7> Block: (64 2)..
-<7> Block: (128 1)..
-<7> Block: (128 2)..
-<7> Block: (256 1)..
-<7> Block: (256 2)..
-#? 
-1) copyRow		   5) transposeUnroll4Row    9) transposeSmem
-2) copyCol		   6) transposeUnroll4Col   10) transposeSmemPad
-3) transposeNaiveRow	   7) transposeDiagonalRow  11) Quit
-4) transposeNaiveCol	   8) transposeDiagonalCol
-#? 6
-Peforming **grid-level optimization on transposeUnroll4Col Kernel**
-<5> Block: (8 1)..
-<5> Block: (8 2)..
-<5> Block: (8 8)..
-<5> Block: (8 16)..
-<5> Block: (8 32)..
-<5> Block: (16 8)..
-<5> Block: (16 16)..
-<5> Block: (32 4)..
-<5> Block: (32 8)..
-<5> Block: (32 16)..
-<5> Block: (32 32)..
-<5> Block: (64 2)..
-<5> Block: (128 1)..
-<5> Block: (128 2)..
-<5> Block: (256 1)..
-<5> Block: (256 2)..
-#? 
-1) copyRow		   5) transposeUnroll4Row    9) transposeSmem
-2) copyCol		   6) transposeUnroll4Col   10) transposeSmemPad
-3) transposeNaiveRow	   7) transposeDiagonalRow  11) Quit
-4) transposeNaiveCol	   8) transposeDiagonalCol
-#? 11
-Results..
-Kernel Name          | Elapsed time (s)     | bandwidth (MB/s)     |           Block(x,y) |
-transposeDiagonalCol | 0.028006             | 299.528137           | block(8.1)          |
-transposeDiagonalCol | 0.019693             | 425.966078           | block(256.2)        |
-transposeDiagonalCol | 0.019246             | 435.865517           | block(128.1)        |
-transposeDiagonalCol | 0.019205             | 436.790795           | block(256.1)        |
-transposeDiagonalCol | 0.018060             | 464.486291           | block(8.2)          |
-transposeDiagonalCol | 0.016208             | 517.554236           | block(32.32)        |
-transposeDiagonalCol | 0.016072             | 521.938142           | block(128.2)        |
-transposeDiagonalCol | 0.012271             | 683.616462           | block(32.16)        |
-transposeDiagonalCol | 0.012190             | 688.162496           | block(64.2)         |
-transposeDiagonalCol | 0.012078             | 694.533490           | block(8.8)          |
-transposeDiagonalCol | 0.010460             | 801.959567           | block(16.8)         |
-transposeDiagonalCol | 0.010414             | 805.503024           | block(32.8)         |
-transposeDiagonalCol | 0.010377             | 808.390132           | block(32.4)         |
-transposeDiagonalCol | 0.010360             | 809.711000           | block(16.16)        |
-transposeDiagonalCol | 0.009856             | 851.118123           | block(8.16)         |
-transposeDiagonalCol | 0.009179             | 913.879795           | block(8.32)         |
-transposeUnroll4Col  | 0.008199             | 1023.128677          | block(16.16)        |
-**transposeUnroll4Col  | 0.008161             | 1027.881159          | block(32.8)         |**
-transposeUnroll4Col  | 0.019864             | 422.300304           | block(8.1)          |
-transposeUnroll4Col  | 0.018724             | 448.014517           | block(256.1)        |
-transposeUnroll4Col  | 0.017906             | 468.481580           | block(256.2)        |
-transposeUnroll4Col  | 0.016227             | 516.953499           | block(64.2)         |
-transposeUnroll4Col  | 0.016113             | 520.609800           | block(128.2)        |
-transposeUnroll4Col  | 0.015096             | 555.686026           | block(128.1)        |
-transposeUnroll4Col  | 0.013450             | 623.681570           | block(8.8)          |
-transposeUnroll4Col  | 0.012165             | 689.565148           | block(8.2)          |
-transposeUnroll4Col  | 0.011997             | 699.226377           | block(8.16)         |
-transposeUnroll4Col  | 0.010500             | 798.918531           | block(32.16)        |
-transposeUnroll4Col  | 0.010429             | 804.361302           | block(8.32)         |
-transposeUnroll4Col  | 0.010346             | 810.811912           | block(16.8)         |
-transposeUnroll4Col  | 0.010341             | 811.204484           | block(32.4)         |
-transposeUnroll4Col  | 0.009671             | 867.400638           | block(32.32)        |
-Goodbye..
-<br>
-**Best result is highlighted for this run, and it's from the diagonalCol kernel**
+	matrixTransposeCUDA/profiler_scripts$ ./profiler.sh
+	Running 0..
+	Running 1..
+	Running 2..
+	Running 3..
+	Running 4..
+	Running 5..
+	Running 6..
+	Running 7..
+	Running 8..
+	Running 9..
+	Running 10..
+	Kernel Name          | Elapsed time (s)     | bandwidth (MB/s)     |
+	copyRow              | 0.007968             | 1052.793899          |
+	copyCol              | 0.033173             | 252.873924           |
+	transposeNaiveRow    | 0.032308             | 259.646017           |
+	transposeNaiveCol    | 0.010387             | 807.610799           |
+	transposeUnroll4Row  | 0.030671             | 273.503977           |
+	transposeUnroll4Col  | 0.010322             | 812.703488           |
+	transposeDiagonalRow | 0.033044             | 253.860993           |
+	transposeDiagonalCol | 0.008201             | 1022.860983          |
+	transposeSmem        | 0.013044             | 643.106783           |
+	transposeSmemPad     | 0.012761             | 657.369207           |
+	Profiling 0..
+	Profiling 1..
+	Profiling 2..
+	Profiling 3..
+	Profiling 4..
+	Profiling 5..
+	Profiling 6..
+	Profiling 7..
+	Profiling 8..
+	Profiling 9..
+	Select the kernel
+	1) copyRow		   5) transposeUnroll4Row    9) transposeSmem
+	2) copyCol		   6) transposeUnroll4Col   10) transposeSmemPad
+	3) transposeNaiveRow	   7) transposeDiagonalRow  11) Quit
+	4) transposeNaiveCol	   8) transposeDiagonalCol
+	#? 8
+	Peforming **grid-level optimization on transposeDiagonalCol Kernel**
+	<7> Block: (8 1)..
+	<7> Block: (8 2)..
+	<7> Block: (8 8)..
+	<7> Block: (8 16)..
+	<7> Block: (8 32)..
+	<7> Block: (16 8)..
+	<7> Block: (16 16)..
+	<7> Block: (32 4)..
+	<7> Block: (32 8)..
+	<7> Block: (32 16)..
+	<7> Block: (32 32)..
+	<7> Block: (64 2)..
+	<7> Block: (128 1)..
+	<7> Block: (128 2)..
+	<7> Block: (256 1)..
+	<7> Block: (256 2)..
+	#? 
+	1) copyRow		   5) transposeUnroll4Row    9) transposeSmem
+	2) copyCol		   6) transposeUnroll4Col   10) transposeSmemPad
+	3) transposeNaiveRow	   7) transposeDiagonalRow  11) Quit
+	4) transposeNaiveCol	   8) transposeDiagonalCol
+	#? 6
+	Peforming **grid-level optimization on transposeUnroll4Col Kernel**
+	<5> Block: (8 1)..
+	<5> Block: (8 2)..
+	<5> Block: (8 8)..
+	<5> Block: (8 16)..
+	<5> Block: (8 32)..
+	<5> Block: (16 8)..
+	<5> Block: (16 16)..
+	<5> Block: (32 4)..
+	<5> Block: (32 8)..
+	<5> Block: (32 16)..
+	<5> Block: (32 32)..
+	<5> Block: (64 2)..
+	<5> Block: (128 1)..
+	<5> Block: (128 2)..
+	<5> Block: (256 1)..
+	<5> Block: (256 2)..
+	#? 
+	1) copyRow		   5) transposeUnroll4Row    9) transposeSmem
+	2) copyCol		   6) transposeUnroll4Col   10) transposeSmemPad
+	3) transposeNaiveRow	   7) transposeDiagonalRow  11) Quit
+	4) transposeNaiveCol	   8) transposeDiagonalCol
+	#? 11
+	Results..
+	Kernel Name          | Elapsed time (s)     | bandwidth (MB/s)     |           Block(x,y) |
+	transposeDiagonalCol | 0.028006             | 299.528137           | block(8.1)          |
+	transposeDiagonalCol | 0.019693             | 425.966078           | block(256.2)        |
+	transposeDiagonalCol | 0.019246             | 435.865517           | block(128.1)        |
+	transposeDiagonalCol | 0.019205             | 436.790795           | block(256.1)        |
+	transposeDiagonalCol | 0.018060             | 464.486291           | block(8.2)          |	
+	transposeDiagonalCol | 0.016208             | 517.554236           | block(32.32)        |
+	transposeDiagonalCol | 0.016072             | 521.938142           | block(128.2)        |
+	transposeDiagonalCol | 0.012271             | 683.616462           | block(32.16)        |
+	transposeDiagonalCol | 0.012190             | 688.162496           | block(64.2)         |
+	transposeDiagonalCol | 0.012078             | 694.533490           | block(8.8)          |
+	transposeDiagonalCol | 0.010460             | 801.959567           | block(16.8)         |
+	transposeDiagonalCol | 0.010414             | 805.503024           | block(32.8)         |
+	transposeDiagonalCol | 0.010377             | 808.390132           | block(32.4)         |
+	transposeDiagonalCol | 0.010360             | 809.711000           | block(16.16)        |
+	transposeDiagonalCol | 0.009856             | 851.118123           | block(8.16)         |
+	transposeDiagonalCol | 0.009179             | 913.879795           | block(8.32)         |
+	transposeUnroll4Col  | 0.008199             | 1023.128677          | block(16.16)        |
+	transposeUnroll4Col  | 0.008161             | 1027.881159          | block(32.8)         |
+	transposeUnroll4Col  | 0.019864             | 422.300304           | block(8.1)          |
+	transposeUnroll4Col  | 0.018724             | 448.014517           | block(256.1)        |
+	transposeUnroll4Col  | 0.017906             | 468.481580           | block(256.2)        |
+	transposeUnroll4Col  | 0.016227             | 516.953499           | block(64.2)         |
+	transposeUnroll4Col  | 0.016113             | 520.609800           | block(128.2)        |
+	transposeUnroll4Col  | 0.015096             | 555.686026           | block(128.1)        |
+	transposeUnroll4Col  | 0.013450             | 623.681570           | block(8.8)          |
+	transposeUnroll4Col  | 0.012165             | 689.565148           | block(8.2)          |
+	transposeUnroll4Col  | 0.011997             | 699.226377           | block(8.16)         |
+	transposeUnroll4Col  | 0.010500             | 798.918531           | block(32.16)        |
+	transposeUnroll4Col  | 0.010429             | 804.361302           | block(8.32)         |
+	transposeUnroll4Col  | 0.010346             | 810.811912           | block(16.8)         |
+	transposeUnroll4Col  | 0.010341             | 811.204484           | block(32.4)         |
+	transposeUnroll4Col  | 0.009671             | 867.400638           | block(32.32)        |
+	Goodbye..
+
+**Best result it's from the diagonalCol kernel**
 

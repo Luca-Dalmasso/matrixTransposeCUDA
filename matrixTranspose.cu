@@ -428,8 +428,16 @@ int main(int argc, char **argv){
     		kernelName=strdup("transposeDiagonalRow");
     		kernel=&transposeDiagonalRow;
     		break;
+        /*setup transposeDiagonalCol*/
+        case 7:
+    		#if (VERBOSE)
+    		fprintf(stdout,"transposeDiagonalCol kernel selected\n");
+    		#endif
+    		kernelName=strdup("transposeDiagonalCol");
+    		kernel=&transposeDiagonalCol;
+    		break;
     	/*setup transposeSmem*/
-    	case 7:
+    	case 8:
     		#if (VERBOSE)
     		fprintf(stdout,"transposeSmem kernel selected\n");
     		#endif
@@ -437,7 +445,7 @@ int main(int argc, char **argv){
     		kernel=&transposeSmem;
     		break;
     	/*setup transposeSmemPad*/
-    	case 8:
+    	case 9:
     		#if (VERBOSE)
     		fprintf(stdout,"transposeSmemPad kernel selected\n");
     		#endif
@@ -445,7 +453,7 @@ int main(int argc, char **argv){
     		kernel=&transposeSmemPad;
     		break;
     	/*setup transposeSmemUnrollPadDyn*/
-    	case 9:
+    	case 10:
     		#if (VERBOSE)
     		fprintf(stdout,"transposeSmemUnrollPadDyn kernel selected\n");
     		#endif

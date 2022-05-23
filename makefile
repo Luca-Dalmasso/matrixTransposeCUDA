@@ -40,7 +40,7 @@ endif
 
 #AVAILABLE COMMANDS:
 #all: compilation process (DEFAULT)
-#clean: cleaning process will clean docs/ build/ (TO BE EXPLICITLY CALLED es: make clean)
+#clean: cleaning process will clean build/ (TO BE EXPLICITLY CALLED es: make clean)
 #docs: build documantation in html and LaTex, documentation will be saved in docs/, (TO BE EXPLICITLY CALLED es: make docs)
 #test: just used to check that all paths are correct (TO BE EXPLICITLY CALLED es: make test)
 .PHONY: all clean docs test
@@ -85,6 +85,5 @@ clean:
 	rm -rf $(BUILD)*
 	rm -f $(NAME).o
 	rm -f $(NAME)
-	rm -rf $(DOCS)*
 
 	

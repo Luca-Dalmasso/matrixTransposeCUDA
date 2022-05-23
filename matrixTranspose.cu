@@ -307,8 +307,8 @@ int main(int argc, char **argv){
 	#endif
 	
 	int iKernel;
-	unsigned int nx=1<<12;
-	unsigned int ny=1<<12;
+	unsigned int nx=1<<10;
+	unsigned int ny=1<<10;
 	unsigned int blockx=16;
 	unsigned int blocky=16;
 	unsigned int i;

@@ -1,141 +1,150 @@
-==11336== NVPROF is profiling process 11336, command: .././matrixTranspose 0
-==11336== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==11336== Profiling application: .././matrixTranspose 0
-==11336== Profiling result:
-==11336== Metric result:
+==2209== NVPROF is profiling process 2209, command: .././matrixTranspose 0
+==2209== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2209== Profiling application: .././matrixTranspose 0
+==2209== Profiling result:
+==2209== Metric result:
 "Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
 "NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"gld_efficiency","Global Memory Load Efficiency",100.000000%,100.000000%,100.000000%
 "NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"gst_efficiency","Global Memory Store Efficiency",100.000000%,100.000000%,100.000000%
-"NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",2097154,2097154,2097154
-"NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",524288,524288,524288
+"NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",524290,524290,524290
+"NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",131072,131072,131072
 "NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
-"NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.837406,0.837406,0.837406
+"NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.804281,0.804281,0.804281
 "NVIDIA Tegra X1 (0)","copyRow(float*, float*, unsigned int, unsigned int)",1,"branch_efficiency","Branch Efficiency",100.000000%,100.000000%,100.000000%
-==11401== NVPROF is profiling process 11401, command: .././matrixTranspose 1
-==11401== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==11401== Profiling application: .././matrixTranspose 1
-==11401== Profiling result:
-==11401== Metric result:
+==2233== NVPROF is profiling process 2233, command: .././matrixTranspose 1
+==2233== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2233== Profiling application: .././matrixTranspose 1
+==2233== Profiling result:
+==2233== Metric result:
 "Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
 "NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"gld_efficiency","Global Memory Load Efficiency",25.000000%,25.000000%,25.000000%
 "NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"gst_efficiency","Global Memory Store Efficiency",12.500000%,12.500000%,12.500000%
-"NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",2097154,2097154,2097154
-"NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",4194304,4194304,4194304
+"NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",524290,524290,524290
+"NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",1048576,1048576,1048576
 "NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
-"NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.849959,0.849959,0.849959
+"NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.841069,0.841069,0.841069
 "NVIDIA Tegra X1 (0)","copyCol(float*, float*, unsigned int, unsigned int)",1,"branch_efficiency","Branch Efficiency",100.000000%,100.000000%,100.000000%
-==11478== NVPROF is profiling process 11478, command: .././matrixTranspose 2
-==11478== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==11478== Profiling application: .././matrixTranspose 2
-==11478== Profiling result:
-==11478== Metric result:
+==2271== NVPROF is profiling process 2271, command: .././matrixTranspose 2
+==2271== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2271== Profiling application: .././matrixTranspose 2
+==2271== Profiling result:
+==2271== Metric result:
 "Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
 "NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"gld_efficiency","Global Memory Load Efficiency",100.000000%,100.000000%,100.000000%
 "NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"gst_efficiency","Global Memory Store Efficiency",12.500000%,12.500000%,12.500000%
-"NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",2097154,2097154,2097154
-"NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",4194304,4194304,4194304
+"NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",524290,524290,524290
+"NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",1048576,1048576,1048576
 "NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
-"NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.844091,0.844091,0.844091
+"NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.840168,0.840168,0.840168
 "NVIDIA Tegra X1 (0)","transposeNaiveRow(float*, float*, unsigned int, unsigned int)",1,"branch_efficiency","Branch Efficiency",100.000000%,100.000000%,100.000000%
-==11547== NVPROF is profiling process 11547, command: .././matrixTranspose 3
-==11547== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==11547== Profiling application: .././matrixTranspose 3
-==11547== Profiling result:
-==11547== Metric result:
+==2297== NVPROF is profiling process 2297, command: .././matrixTranspose 3
+==2297== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2297== Profiling application: .././matrixTranspose 3
+==2297== Profiling result:
+==2297== Metric result:
 "Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
 "NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"gld_efficiency","Global Memory Load Efficiency",25.000000%,25.000000%,25.000000%
 "NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"gst_efficiency","Global Memory Store Efficiency",100.000000%,100.000000%,100.000000%
-"NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",2097154,2097154,2097154
-"NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",524288,524288,524288
+"NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",524290,524290,524290
+"NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",131072,131072,131072
 "NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
-"NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.827835,0.827835,0.827835
+"NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.797672,0.797672,0.797672
 "NVIDIA Tegra X1 (0)","transposeNaiveCol(float*, float*, unsigned int, unsigned int)",1,"branch_efficiency","Branch Efficiency",100.000000%,100.000000%,100.000000%
-==11626== NVPROF is profiling process 11626, command: .././matrixTranspose 4
-==11626== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==11626== Profiling application: .././matrixTranspose 4
-==11626== Profiling result:
-==11626== Metric result:
+==2319== NVPROF is profiling process 2319, command: .././matrixTranspose 4
+==2319== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2319== Profiling application: .././matrixTranspose 4
+==2319== Profiling result:
+==2319== Metric result:
 "Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
 "NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"gld_efficiency","Global Memory Load Efficiency",100.000000%,100.000000%,100.000000%
 "NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"gst_efficiency","Global Memory Store Efficiency",12.500000%,12.500000%,12.500000%
-"NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",2097154,2097154,2097154
-"NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",4194304,4194304,4194304
+"NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",524290,524290,524290
+"NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",1048576,1048576,1048576
 "NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
-"NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.855116,0.855116,0.855116
+"NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.850355,0.850355,0.850355
 "NVIDIA Tegra X1 (0)","transposeUnroll4Row(float*, float*, unsigned int, unsigned int)",1,"branch_efficiency","Branch Efficiency",100.000000%,100.000000%,100.000000%
-==11696== NVPROF is profiling process 11696, command: .././matrixTranspose 5
-==11696== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==11696== Profiling application: .././matrixTranspose 5
-==11696== Profiling result:
-==11696== Metric result:
+==2346== NVPROF is profiling process 2346, command: .././matrixTranspose 5
+==2346== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2346== Profiling application: .././matrixTranspose 5
+==2346== Profiling result:
+==2346== Metric result:
 "Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
 "NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"gld_efficiency","Global Memory Load Efficiency",25.000000%,25.000000%,25.000000%
 "NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"gst_efficiency","Global Memory Store Efficiency",100.000000%,100.000000%,100.000000%
-"NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",2097154,2097154,2097154
-"NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",524288,524288,524288
+"NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",524290,524290,524290
+"NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",131072,131072,131072
 "NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
-"NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.949169,0.949169,0.949169
+"NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.942697,0.942697,0.942697
 "NVIDIA Tegra X1 (0)","transposeUnroll4Col(float*, float*, unsigned int, unsigned int)",1,"branch_efficiency","Branch Efficiency",100.000000%,100.000000%,100.000000%
-==11765== NVPROF is profiling process 11765, command: .././matrixTranspose 6
-==11765== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==11765== Profiling application: .././matrixTranspose 6
-==11765== Profiling result:
-==11765== Metric result:
+==2372== NVPROF is profiling process 2372, command: .././matrixTranspose 6
+==2372== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2372== Profiling application: .././matrixTranspose 6
+==2372== Profiling result:
+==2372== Metric result:
 "Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
 "NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"gld_efficiency","Global Memory Load Efficiency",100.000000%,100.000000%,100.000000%
 "NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"gst_efficiency","Global Memory Store Efficiency",12.500000%,12.500000%,12.500000%
-"NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",2097154,2097154,2097154
-"NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",4194304,4194304,4194304
+"NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",524290,524290,524290
+"NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",1048576,1048576,1048576
 "NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",0.000000,0.000000,0.000000
 "NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
-"NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.871599,0.871599,0.871599
+"NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.829838,0.829838,0.829838
 "NVIDIA Tegra X1 (0)","transposeDiagonalRow(float*, float*, unsigned int, unsigned int)",1,"branch_efficiency","Branch Efficiency",100.000000%,100.000000%,100.000000%
-==11844== NVPROF is profiling process 11844, command: .././matrixTranspose 7
-==11844== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==11844== Profiling application: .././matrixTranspose 7
-==11844== Profiling result:
-==11844== Metric result:
+==2403== NVPROF is profiling process 2403, command: .././matrixTranspose 7
+==2403== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2403== Profiling application: .././matrixTranspose 7
+==2403== Profiling result:
+==2403== Metric result:
+"Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
+"NVIDIA Tegra X1 (0)","transposeDiagonalCol(float*, float*, unsigned int, unsigned int)",1,"gld_efficiency","Global Memory Load Efficiency",25.000000%,25.000000%,25.000000%
+"NVIDIA Tegra X1 (0)","transposeDiagonalCol(float*, float*, unsigned int, unsigned int)",1,"gst_efficiency","Global Memory Store Efficiency",100.000000%,100.000000%,100.000000%
+"NVIDIA Tegra X1 (0)","transposeDiagonalCol(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",524290,524290,524290
+"NVIDIA Tegra X1 (0)","transposeDiagonalCol(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",131072,131072,131072
+"NVIDIA Tegra X1 (0)","transposeDiagonalCol(float*, float*, unsigned int, unsigned int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",0.000000,0.000000,0.000000
+"NVIDIA Tegra X1 (0)","transposeDiagonalCol(float*, float*, unsigned int, unsigned int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",0.000000,0.000000,0.000000
+"NVIDIA Tegra X1 (0)","transposeDiagonalCol(float*, float*, unsigned int, unsigned int)",1,"shared_efficiency","Shared Memory Efficiency",0.000000%,0.000000%,0.000000%
+"NVIDIA Tegra X1 (0)","transposeDiagonalCol(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.805271,0.805271,0.805271
+"NVIDIA Tegra X1 (0)","transposeDiagonalCol(float*, float*, unsigned int, unsigned int)",1,"branch_efficiency","Branch Efficiency",100.000000%,100.000000%,100.000000%
+==2434== NVPROF is profiling process 2434, command: .././matrixTranspose 8
+==2434== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2434== Profiling application: .././matrixTranspose 8
+==2434== Profiling result:
+==2434== Metric result:
 "Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
 "NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"gld_efficiency","Global Memory Load Efficiency",100.000000%,100.000000%,100.000000%
 "NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"gst_efficiency","Global Memory Store Efficiency",100.000000%,100.000000%,100.000000%
-"NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",2097154,2097154,2097154
-"NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",524288,524288,524288
+"NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",524290,524290,524290
+"NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",131072,131072,131072
 "NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",8.000000,8.000000,8.000000
 "NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",1.000000,1.000000,1.000000
 "NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"shared_efficiency","Shared Memory Efficiency",22.222222%,22.222222%,22.222222%
-"NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.891963,0.891963,0.891963
+"NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.893772,0.893772,0.893772
 "NVIDIA Tegra X1 (0)","transposeSmem(float*, float*, unsigned int, unsigned int)",1,"branch_efficiency","Branch Efficiency",100.000000%,100.000000%,100.000000%
-==11931== NVPROF is profiling process 11931, command: .././matrixTranspose 8
-==11931== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==11931== Profiling application: .././matrixTranspose 8
-==11931== Profiling result:
-==11931== Metric result:
+==2460== NVPROF is profiling process 2460, command: .././matrixTranspose 9
+==2460== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==2460== Profiling application: .././matrixTranspose 9
+==2460== Profiling result:
+==2460== Metric result:
 "Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
 "NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"gld_efficiency","Global Memory Load Efficiency",100.000000%,100.000000%,100.000000%
 "NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"gst_efficiency","Global Memory Store Efficiency",100.000000%,100.000000%,100.000000%
-"NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",2097154,2097154,2097154
-"NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",524288,524288,524288
-"NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",2.000000,2.000000,2.000000
+"NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"gld_transactions","Global Load Transactions",524290,524290,524290
+"NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"gst_transactions","Global Store Transactions",131072,131072,131072
+"NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",1.000000,1.000000,1.000000
 "NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",2.000000,2.000000,2.000000
-"NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"shared_efficiency","Shared Memory Efficiency",50.000000%,50.000000%,50.000000%
-"NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.909522,0.909522,0.909522
+"NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"shared_efficiency","Shared Memory Efficiency",66.666667%,66.666667%,66.666667%
+"NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"achieved_occupancy","Achieved Occupancy",0.904364,0.904364,0.904364
 "NVIDIA Tegra X1 (0)","transposeSmemPad(float*, float*, unsigned int, unsigned int)",1,"branch_efficiency","Branch Efficiency",100.000000%,100.000000%,100.000000%
-==12013== NVPROF is profiling process 12013, command: .././matrixTranspose 9
-==12013== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==12013== Error: Internal profiling error 4107:999.
-Error: matrixTranspose.cu:475
-code: 0, reason: no error
-======== Error: CUDA profiling error.

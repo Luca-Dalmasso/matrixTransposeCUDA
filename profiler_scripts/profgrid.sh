@@ -23,5 +23,3 @@ do
 	iKernel=$(($iKernel + 1))
 	stop=$(($stop - 1))
 done
-
-#read report file and print

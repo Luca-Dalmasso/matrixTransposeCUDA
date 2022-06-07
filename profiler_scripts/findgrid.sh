@@ -4,40 +4,18 @@
 iKernel=""
 
 declare -a ARGS=(
-		 "8 1"
-		 "8 2"
-		 "8 8"
-		 "8 16"
-		 "8 32"
-#		 "8 64"
-#		 "8 128"
-#		 "16 1"
-#		 "16 2"
-#		 "16 4"
-		 "16 8"
-		 "16 16"
-#		 "16 32"
-#		 "16 64"
-#		 "32 1"
-#		 "32 2"
-		 "32 4"
-		 "32 8"
-		 "32 16"
-	     "32 32"
-#		 "64 1"
-		 "64 2"
-#	     "64 4"
-#		 "64 8"
-#	     "64 16"
-	     "128 1"
-	     "128 2"
-#		 "128 4"
-#		 "128 8"
-		 "256 1"
-		 "256 2"
-#		 "256 4"
-#		 "512 1"
-#	     "512 2"
+		"7 1"
+		"7 7"
+		"7 14"
+		"7 28"
+		"14 1"
+		"14 7"
+		"14 14"
+		"14 28"
+		"28 1"
+		"28 7" 
+		"28 14"
+		"28 28"
 		)
 		
 echo "Select the kernel"
@@ -52,14 +30,14 @@ do
 				eTime=""
 				bandW=""
 				block=""
-				cat $REPORT_FILE3 | sort -k 3 > ${REPORT_FILE4}
+				cat $REPORT_FILE3 | sort -k 4 > ${REPORT_FILE4}
 				printf "%-20s | %-20s | %-20s | %20s |\n" "Kernel Name" "Elapsed time (s)" "bandwidth (MB/s)" "Block(x,y)"
 				while read line
 				do
 					kernelName=$(echo $line | cut -d',' -f1)
 					eTime=$(echo $line | cut -d',' -f3)
 					bandW=$(echo $line | cut -d',' -f2)
-					block=$(echo $line | cut -d',' -f5)
+					block=$(echo $line | cut -d',' -f6)
 					printf "%-20s | %-20s | %-20s | %-20s|\n" $kernelName "$eTime" "$bandW" "$block"
 				done < $REPORT_FILE4
 			fi

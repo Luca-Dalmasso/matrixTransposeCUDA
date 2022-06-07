@@ -17,7 +17,7 @@
 ## SETUP
 ##
 ######################################################################
-APP_NAME=matrixTranspose
+APP_NAME="matrixTranspose"
 CURRENT_DIR=.
 REPORT_DIR=../${CURRENT_DIR}/report
 LOG_DIR=../${CURRENT_DIR}/logs
@@ -54,7 +54,7 @@ source ${CURRENT_DIR}/profgrid.sh
 
 ######################################################################
 ##
-## 3: select best performant kernel from step1 and run grid level opt. 
+## 3: run grid level opt on a selected kernel
 ##
 ######################################################################
 source ${CURRENT_DIR}/findgrid.sh
